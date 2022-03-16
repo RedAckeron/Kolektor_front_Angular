@@ -1,7 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FindgameComponent } from './pages/findgame/findgame.component';
+import { HomeComponent } from './pages/home/home.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:'',redirectTo:'/home', pathMatch:'full'},
+  {path : 'home',component:HomeComponent},
+  {path:'findgame',component:FindgameComponent}
+
+  //{path : 'chemin', component: composantquiseracharger}
+  //dans l url si on rajoute /home le composant home sera charger 
+  /*
+  {path : 'home',component:findgame },
+  
+  {path : 'bindings',component: BindingsComponent},
+  {path : 'exo1',component: Exo1Component},
+  {path : 'StructDirective',component: StructDirectiveComponent},
+  {path : 'binding2Ways',component: Bindings2WaysComponent},
+  {path : 'about',component: AboutComponent},
+  {path:'**',redirectTo:'/home'}
+  */
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
