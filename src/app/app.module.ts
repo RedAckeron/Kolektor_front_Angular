@@ -10,6 +10,7 @@ import { MenuComponent } from './component/menu/menu.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
+import { StatsComponent } from './pages/stats/stats/stats.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     FindgameComponent,
     FooterComponent,
     MenuComponent,
-    HomeComponent
+    HomeComponent,
+    StatsComponent
   ],
   imports: [
     FormsModule,

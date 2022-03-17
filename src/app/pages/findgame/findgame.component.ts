@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FindgameService, Result } from './findgame.service';
 
@@ -30,14 +31,15 @@ export class FindgameComponent implements OnInit {
       });
     }
 
-add_game(namegame : string){
 
-}
   ngOnInit(): void {
   }
 
   handleSendAction() {
-    console.log(this.selectedGame);
-    this._service.findById(this.selectedGame).subscribe((it: any) => console.log(it));
+    //console.log(this.selectedGame);
+    this._service.findById(this.selectedGame).subscribe((it: any) => this._service.addGame(it));
+    
+    
+
   }
 }
