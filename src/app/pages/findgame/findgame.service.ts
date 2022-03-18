@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { GameEntity } from './models/GameEntity.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,11 +17,17 @@ export class FindgameService {
 
   findById(id: number) 
     {
+
       return this._http.get<any>(`https://api.rawg.io/api/games/${id}?key=f17b77b881b9445eb586f747c870f921`);
     }
-  addGame(it: any)
+
+  
+  addGame(ittosend: GameEntity)
     {
-    return this._http.post<any>("https://localhost:3000/game", it).subscribe(data => {console.log(data)})
+    console.log(ittosend)
+
+    //return this._http.post<GameEntity>("http://localhost:3000/game", ittosend).subscribe(data => {console.log(data.id)})
+    return this._http.post<GameEntity>("http://localhost:3000/game", {"Title":ittosend.title,"Dt_release":ittosend.dt_release,"Dt_in":ittosend.dt_in}).subscribe(data => {console.log(data.id)})
     
     
     }

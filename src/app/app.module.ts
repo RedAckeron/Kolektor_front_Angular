@@ -11,6 +11,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { StatsComponent } from './pages/stats/stats/stats.component';
+import { CollectionComponent } from './pages/collection/collection.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { StatsComponent } from './pages/stats/stats/stats.component';
     FooterComponent,
     MenuComponent,
     HomeComponent,
-    StatsComponent
+    StatsComponent,
+    CollectionComponent,
   ],
   imports: [
     FormsModule,

@@ -1,22 +1,18 @@
 recherche par nom 
 
 <input type="text" (keyup)="searchgame()" [(ngModel)]="namegame" >
-<!-- <div *ngFor="let game of games">
-    <option>{{game.name}}</option>
-</div>  -->
 
-
-<!-- <div *ngFor="let game of games">    
-</div> -->
-
-
-
-<select (change)="selectedGame = $event.target.value"> 
+<select (change)="selectedGame = $event.target.value;chkgame=false;"> 
     <option *ngFor="let it of gamesWithPlatform" [value]="it.id">
         {{ it.name }} ({{ it.platform }})
     </option>
 </select>
-<button (click)="handleSendAction()">Envoyer</button>
+<button [disabled]="chkgame" (click)="handleSendAction()">Ajouter</button>
+
+
+<div>{{"TEST"+this.selectedGame}}</div>
+
+
 
 <!-- <select>
     <option *ngFor="let game of games">{{game.name}}</option>

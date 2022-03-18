@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CollectionComponent } from './pages/collection/collection.component';
 import { FindgameComponent } from './pages/findgame/findgame.component';
 import { HomeComponent } from './pages/home/home.component';
 import { StatsComponent } from './pages/stats/stats/stats.component';
@@ -8,6 +9,7 @@ const routes: Routes = [
   {path:'',redirectTo:'/home', pathMatch:'full'},
   {path:'home',component:HomeComponent},
   {path:'findgame',component:FindgameComponent},
+  {path:'collection',component:CollectionComponent},
   {path:'stats',component:StatsComponent},
   {path:'**',redirectTo:'/home'}
 
