@@ -3,7 +3,6 @@ import { Result } from '../findgame/findgame.service';
 import { UserEntity } from './models/user.model';
 import { UserService } from './user.service';
 
-
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -11,16 +10,16 @@ import { UserService } from './user.service';
 })
 export class UserComponent implements OnInit {
   user: UserEntity;
-  
-  constructor(private _userService:UserService) {
-    this.user=new UserEntity()
+
+  constructor(private _userService: UserService) {
+    this.user = new UserEntity();
   }
 
   ngOnInit(): void {}
-  chk_user()
-    {
-    console.log(this._userService.chk_user(this.user));
-    
-    //if(this.user.id==1)console.log("ID OK")
-    }
+  chk_user() {
+    return this._userService.chk_user(this.user);
+  }
+  get_session_id() {
+    return sessionStorage.getItem('id');
+  }
 }
