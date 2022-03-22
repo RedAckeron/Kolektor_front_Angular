@@ -10,8 +10,9 @@ import { MenuComponent } from './component/menu/menu.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
-import { StatsComponent } from './pages/stats/stats/stats.component';
+import { StatsComponent } from './pages/stats/stats.component';
 import { CollectionComponent } from './pages/collection/collection.component';
+import { UserComponent } from './pages/user/user.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { CollectionComponent } from './pages/collection/collection.component';
     HomeComponent,
     StatsComponent,
     CollectionComponent,
+    UserComponent
   ],
   imports: [
     FormsModule,

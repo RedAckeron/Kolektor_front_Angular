@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CollectionComponent } from './pages/collection/collection.component';
 import { FindgameComponent } from './pages/findgame/findgame.component';
 import { HomeComponent } from './pages/home/home.component';
-import { StatsComponent } from './pages/stats/stats/stats.component';
+import { StatsComponent } from './pages/stats/stats.component';
+import { UserComponent } from './pages/user/user.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home', pathMatch:'full'},
@@ -11,21 +12,8 @@ const routes: Routes = [
   {path:'findgame',component:FindgameComponent},
   {path:'collection',component:CollectionComponent},
   {path:'stats',component:StatsComponent},
+  {path:'user',component:UserComponent},
   {path:'**',redirectTo:'/home'}
-
-
-  //{path : 'chemin', component: composantquiseracharger}
-  //dans l url si on rajoute /home le composant home sera charger 
-  /*
-  {path : 'home',component:findgame },
-  
-  {path : 'bindings',component: BindingsComponent},
-  {path : 'exo1',component: Exo1Component},
-  {path : 'StructDirective',component: StructDirectiveComponent},
-  {path : 'binding2Ways',component: Bindings2WaysComponent},
-  {path : 'about',component: AboutComponent},
-  {path:'**',redirectTo:'/home'}
-  */
 ];
 
 @NgModule({

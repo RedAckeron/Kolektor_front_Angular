@@ -13,7 +13,6 @@ export class FindgameComponent implements OnInit {
   games : any[] = [];
   chkgame : boolean = true;
   gamesWithPlatform: any[] = [];
-
   selectedGame: any | null = null;
 
   constructor(private _service : FindgameService) { }

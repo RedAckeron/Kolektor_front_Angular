@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'kolektor';
+  
+  
+  //sauvegarde de la session
+  saveData()
+    {
+      sessionStorage.setItem('id','1');
+    }
 }

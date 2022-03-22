@@ -1,5 +1,10 @@
 recherche par nom 
 
+
+<div *ngIf=""></div>
+
+
+
 <input type="text" (keyup)="searchgame()" [(ngModel)]="namegame" >
 
 <select (change)="selectedGame = $event.target.value;chkgame=false;"> 
@@ -10,7 +15,7 @@ recherche par nom
 <button [disabled]="chkgame" (click)="handleSendAction()">Ajouter</button>
 
 
-<div>{{"TEST"+this.selectedGame}}</div>
+<!-- <div>{{"TEST"+this.selectedGame}}</div> -->
 
 
 
