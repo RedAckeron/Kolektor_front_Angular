@@ -6,14 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  user_id : number
 
-  constructor() { }
+  constructor() {
+    this.user_id = parseInt(sessionStorage.getItem("id"))
+
+   }
 
   ngOnInit(): void {
   }
 
-}
-const mycomp = () =>{
-  return "<p></p>";
-  
+  user_login=sessionStorage.getItem("login");
 }

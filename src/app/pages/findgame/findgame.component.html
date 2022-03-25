@@ -1,30 +1,58 @@
 recherche par nom 
 
 
-<div *ngIf=""></div>
+<!-- <div *ngIf="user_id">
 
-
-
-<input type="text" (keyup)="searchgame()" [(ngModel)]="namegame" >
-
-<select (change)="selectedGame = $event.target.value;chkgame=false;"> 
-    <option *ngFor="let it of gamesWithPlatform" [value]="it.id">
-        {{ it.name }} ({{ it.platform }})
-    </option>
-</select>
-<button [disabled]="chkgame" (click)="handleSendAction()">Ajouter</button>
-
-
-<!-- <div>{{"TEST"+this.selectedGame}}</div> -->
-
-
-
-<!-- <select>
-    <option *ngFor="let game of games">{{game.name}}</option>
-</select> -->
+    <div id="typ_zone">
+        <input type="text" (keyup)="searchgame()" [(ngModel)]="namegame" >
+    </div>
+    <div id="return_api">
+        <select (change)="selectedGame = $event.target.value;chkgame=false;"> 
+            <option *ngFor="let it of gamesWithPlatform" [value]="it.id">
+                {{ it.name }} ({{ it.platform }})
+            </option>
+        </select>
+    <div id="button">
+        <button [disabled]="chkgame" (click)="handleSendAction()">Ajouter</button>
+    </div>
+    </div>
+</div> -->
 
 
 
 
 
+
+<div *ngIf="user_id">
+
+    <div id="typ_zone">
+        <div id="label">Name : </div>
+        <div id="container"><input type="text" (keyup)="searchgame()" [(ngModel)]="namegame" ></div>
+    </div>
+
+    <div id="return_api">
+        <div id="label">Titre : </div>
+        <div id="container">
+            <select (change)="selectedGame = $event.target.value;chkgame=false;" [(ngModel)]="focusedgame"> 
+                <option *ngFor="let it of gamesWithPlatform |keyvalue" [value]="[it.key,it.value.id]">{{ it.value.name }}</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="return_api">
+        <div id="label">Plateforme : </div>
+        
+        <div id="container" *ngIf="focusedgame !== undefined">
+            <!-- <div id="container" *ngIf="focusedgame.value !== undefined"> -->
+            <select (change)="selectedPlatform = $event.target.value;chkgame=false;" [(ngModel)]="focusedplatform"> 
+                <option *ngFor="let pf of gamesWithPlatform[focusedgame[0]].platforms" [value]="pf.platform.id">{{ pf.platform.name }}</option>
+            </select>
+            <!-- </div> -->
+        </div>
+    </div>
+
+    <div id="button">
+        <button [disabled]="chkgame" (click)="handleSendAction()">Ajouter</button>
+    </div>
+</div>
 

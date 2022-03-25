@@ -1,31 +1,18 @@
-header{
-    padding: 0;
-    margin: 0;
-    background-color: aqua; 
-    width: 100%;
-    height:50px;
-    float:left;
-    }
-menu
-    {
-    padding: 0;
-    margin: 0;
-    background-color: green;
-    width: 10%;
-    height: 500px;
-    float:left;
-    }
 main
     {
     float:left;
     padding: 0;
     margin: 0;
-    background-color:lightsalmon;
-    width: 90%;
+    width: 500px;
     height:500px;
     }
 footer{
     vertical-align:bottom;
     width:100%;
     float: left;
+#bdy{
+    margin: 0 auto;
+    width:100px;
+    background-color: red;
+}
 }

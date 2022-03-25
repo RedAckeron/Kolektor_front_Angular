@@ -1,14 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { UserEntity } from '../user/models/user.model';
 import { GameEntity } from './models/GameEntity.model';
+import { PlatformEntity } from './models/PlatformEntity.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FindgameService {
+user = new UserEntity
+  constructor(private _http : HttpClient) {
 
-  constructor(private _http : HttpClient) { }
+    this.user.id= parseInt( sessionStorage.getItem('id'))
+    
+    //console.log(sessionStorage.getItem('id')) 
+  }
 
   findname(namegame : string) : Observable<Result>
     {
@@ -17,19 +24,21 @@ export class FindgameService {
 
   findById(id: number) 
     {
-
       return this._http.get<any>(`https://api.rawg.io/api/games/${id}?key=f17b77b881b9445eb586f747c870f921`);
     }
-
   
   addGame(ittosend: GameEntity)
     {
-    console.log(ittosend)
+    return this._http.post<GameEntity>("http://localhost:3000/game/add_one", ittosend).subscribe()
+    }
 
-    //return this._http.post<GameEntity>("http://localhost:3000/game", ittosend).subscribe(data => {console.log(data.id)})
-    return this._http.post<GameEntity>("http://localhost:3000/game", {"Title":ittosend.title,"Dt_release":ittosend.dt_release,"Dt_in":ittosend.dt_in}).subscribe(data => {console.log(data.id)})
-    
-    
+  platform_show_one(id: number) 
+    {
+    return this._http.get<any>(`https://api.rawg.io/api/platforms/${id}?key=f17b77b881b9445eb586f747c870f921`);
+    }
+  Platform_add_one(platformtosend: PlatformEntity)
+    {
+    return this._http.post<PlatformEntity>("http://localhost:3000/platform/add_one", platformtosend).subscribe()
     }
 }
 

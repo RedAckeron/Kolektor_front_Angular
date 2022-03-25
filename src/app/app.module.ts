@@ -6,12 +6,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './component/header/header.component';
 import { FindgameComponent } from './pages/findgame/findgame.component';
 import { FooterComponent } from './component/footer/footer.component';
-import { MenuComponent } from './component/menu/menu.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { StatsComponent } from './pages/stats/stats.component';
-import { CollectionComponent } from './pages/collection/collection.component';
 import { UserComponent } from './pages/user/user.component';
 
 @NgModule({
@@ -20,10 +18,8 @@ import { UserComponent } from './pages/user/user.component';
     HeaderComponent,
     FindgameComponent,
     FooterComponent,
-    MenuComponent,
     HomeComponent,
     StatsComponent,
-    CollectionComponent,
     UserComponent
   ],
   imports: [
