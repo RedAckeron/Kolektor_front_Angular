@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { StatsComponent } from './pages/stats/stats.component';
 import { UserComponent } from './pages/user/user.component';
+import { FolderComponent } from './pages/folder/folder.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { UserComponent } from './pages/user/user.component';
     FooterComponent,
     HomeComponent,
     StatsComponent,
-    UserComponent
+    UserComponent,
+    FolderComponent
   ],
   imports: [
     FormsModule,
