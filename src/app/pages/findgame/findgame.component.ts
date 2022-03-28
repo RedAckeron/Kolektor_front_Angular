@@ -4,6 +4,7 @@ import { UserEntity } from '../user/models/user.model';
 import { FindgameService, Result } from './findgame.service';
 import { GameEntity } from './models/GameEntity.model';
 import { PlatformEntity } from './models/PlatformEntity.model';
+import { User_game_platform_Entity } from './models/user_game_platform.model';
 
 @Component({
   selector: 'app-findgame',
@@ -18,6 +19,9 @@ export class FindgameComponent implements OnInit {
   selectedGame: any | null = null;
   selectedplatform: any | null = null;
   selectedPlatform: any | null = null;
+  cib_box:boolean
+  cib_manual:boolean
+  cib_game:boolean
   
   user_id : number
 
@@ -51,7 +55,6 @@ export class FindgameComponent implements OnInit {
     let sg_array_tmp = sg_tmp.split(",")
     ittosend.api_id_game=parseInt(sg_array_tmp[1])
     
-    
     //recuperation des données du jeux additionel via l api
     this._service.findById(ittosend.api_id_game).subscribe((it: any) => 
     {
@@ -59,7 +62,7 @@ export class FindgameComponent implements OnInit {
     ittosend.title=it.name
     //recuperation de la date de sortie et convertion en ts -1h de gmt
     ittosend.dt_release=(((Date.parse(it.released))/1000)-3600)
-    //console.table(ittosend)
+    console.table(ittosend)
     this._service.addGame(ittosend);
     })
     
@@ -73,55 +76,16 @@ export class FindgameComponent implements OnInit {
     console.table(platformtosend)
     this._service.Platform_add_one(platformtosend);
     })
-    
 
-    //const newGame = this._service.addGame(ittosend)
-    //this._service.addGameToUser(newGame.id, user.id)
- 
-
-
-
-
-    
-    //recuperation de la date d insertion 
-    //ittosend.dt_in=0
-    //console.table(this)
-    //ittosend.dt_release=0
-
-
-
-    //console.table(ittosend)
-
-    //this._service.findById(this.selectedGame).subscribe((it: any) => {console.table(it)})
-    //ittosend.api_id_game=0
-    //ittosend.api_id_platform=0 
-    
-
-
-    //var myDate = "26-02-2012";
-/*
-    myDate = myDate.split("-");
-    var newDate = new Date( myDate[2], myDate[1] - 1, myDate[0]);
-    console.log(newDate.getTime());
-    
-    
-    ittosend.dt_release="0"
-
-
-
-
-
-    ittosend.title="0"
-
-    //console.log(it.platforms.length)
-    
-    //transformation de it vers model gameentity
-    
-
-    //ittosend.title=it.name;
-    //ittosend.dt_release=it.released;
-*/
-    //this._service.addGame(ittosend)
-    //});
+    //creation de l objet qui vas etre envoyer au postman
+    let User_game_platform = new User_game_platform_Entity()
+    User_game_platform.Id_user=this.user_id
+    User_game_platform.Api_id_game=parseInt(sg_array_tmp[1])
+    User_game_platform.Api_id_platform=parseInt(this.selectedPlatform)
+    User_game_platform.Cib_box=this.cib_box
+    User_game_platform.Cib_manual=this.cib_manual
+    User_game_platform.Cib_game=this.cib_game
+    console.table(User_game_platform)
+    this._service.user_game_platform_add_one(User_game_platform)
     }
 }

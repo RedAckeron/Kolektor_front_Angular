@@ -1,28 +1,5 @@
 recherche par nom 
 
-
-<!-- <div *ngIf="user_id">
-
-    <div id="typ_zone">
-        <input type="text" (keyup)="searchgame()" [(ngModel)]="namegame" >
-    </div>
-    <div id="return_api">
-        <select (change)="selectedGame = $event.target.value;chkgame=false;"> 
-            <option *ngFor="let it of gamesWithPlatform" [value]="it.id">
-                {{ it.name }} ({{ it.platform }})
-            </option>
-        </select>
-    <div id="button">
-        <button [disabled]="chkgame" (click)="handleSendAction()">Ajouter</button>
-    </div>
-    </div>
-</div> -->
-
-
-
-
-
-
 <div *ngIf="user_id">
 
     <div id="typ_zone">
@@ -50,6 +27,26 @@ recherche par nom
             <!-- </div> -->
         </div>
     </div>
+
+    <div id="return_api" *ngIf="focusedgame !== undefined">
+        <div id="label">Boite : </div>
+        <div id="container">
+        <input type="checkbox" id="cib_box" [(ngModel)]="cib_box">           
+        </div>
+    </div>
+    <div id="return_api" *ngIf="focusedgame !== undefined">
+        <div id="label">Livret : </div>
+        <div id="container">
+        <input type="checkbox" id="cib_manual" [(ngModel)]="cib_manual">           
+        </div>
+    </div>
+    <div id="return_api" *ngIf="focusedgame !== undefined">
+        <div id="label">Jeux : </div>
+        <div id="container">
+        <input type="checkbox" id="cib_game" [(ngModel)]="cib_game">           
+        </div>
+    </div>
+
 
     <div id="button">
         <button [disabled]="chkgame" (click)="handleSendAction()">Ajouter</button>

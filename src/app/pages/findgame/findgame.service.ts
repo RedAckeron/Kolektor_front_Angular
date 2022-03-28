@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { UserEntity } from '../user/models/user.model';
 import { GameEntity } from './models/GameEntity.model';
 import { PlatformEntity } from './models/PlatformEntity.model';
+import { User_game_platform_Entity } from './models/user_game_platform.model';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +41,11 @@ user = new UserEntity
     {
     return this._http.post<PlatformEntity>("http://localhost:3000/platform/add_one", platformtosend).subscribe()
     }
+  user_game_platform_add_one(user_game_platform: User_game_platform_Entity)
+    {
+    return this._http.post<PlatformEntity>("http://localhost:3000/user_game_platform/add_one", user_game_platform).subscribe()
+    }
+
 }
 
 export class Result {
