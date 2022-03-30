@@ -1,29 +1,48 @@
-#container
-    {
-    width:400px;  
-    height:30px;
-    }
-#label{
-    width:100px;
-    float:left;
-    text-align: left;
-    }
+#container {
+  width: 400px;
+  height: 30px;
+}
+#container_connected {
+  width: 400px;
+  height: 410px;
+  background-color: aquamarine;
+  border-radius: 5px;
+}
+#label {
+  width: 100px;
+  float: left;
+  text-align: left;
+}
 
-#form{
-    width:300px;
-    float:left;
-    text-align: left;
-    }
+#form {
+  width: 300px;
+  float: left;
+  text-align: left;
+}
 
-#login{
-    text-align: center;
-    background-color: cadetblue;
-    width:410px;
-    height:150px;
-    }
+#login {
+  text-align: center;
+  background-color: rgb(147, 195, 197);
+  width: 400px;
+  height: 200px;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+}
 
-#register{
-background-color: cornflowerblue;
-width:410px;
-    
-    }
+#register {
+  text-align: center;
+  background-color: rgb(203, 211, 158);
+  width: 400px;
+  height: 200px;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+}
+#msg_warning {
+  animation: fadein 2s;
+  background-color: orange;
+  width: 300px;
+  border-radius: 5px;
+  margin: 5px;
+}

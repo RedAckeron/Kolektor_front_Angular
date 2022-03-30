@@ -16,7 +16,6 @@ export class FolderComponent implements OnInit {
 
   constructor(private _service: FolderService) {
     this.user_id = parseInt(sessionStorage.getItem("id"));
-
   }
 
   ngOnInit(): void {

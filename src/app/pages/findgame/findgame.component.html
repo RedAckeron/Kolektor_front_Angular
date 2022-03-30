@@ -1,7 +1,7 @@
-Ajouter un jeux :
+<div *ngIf="!user_id">Not connected</div>
 
 <div *ngIf="user_id">
-
+    Ajouter un jeux :
     <div id="typ_zone">
         <div id="label">Name : </div>
         <div id="container"><input type="text" (keyup)="searchgame()" [(ngModel)]="namegame" ></div>

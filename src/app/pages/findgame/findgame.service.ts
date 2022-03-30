@@ -30,7 +30,7 @@ user = new UserEntity
   
   addGame(ittosend: GameEntity)
     {
-    return this._http.post<GameEntity>("http://localhost:3000/game/add_one", ittosend).subscribe()
+    return this._http.post<GameEntity>("http://85.201.148.106:3000/game/add_one", ittosend).subscribe()
     }
 
   platform_show_one(id: number) 
@@ -39,11 +39,11 @@ user = new UserEntity
     }
   Platform_add_one(platformtosend: PlatformEntity)
     {
-    return this._http.post<PlatformEntity>("http://localhost:3000/platform/add_one", platformtosend).subscribe()
+    return this._http.post<PlatformEntity>("http://85.201.148.106:3000/platform/add_one", platformtosend).subscribe()
     }
   user_game_platform_add_one(user_game_platform: User_game_platform_Entity)
     {
-    return this._http.post<PlatformEntity>("http://localhost:3000/user_game_platform/add_one", user_game_platform).subscribe()
+    return this._http.post<PlatformEntity>("http://85.201.148.106:3000/user_game_platform/add_one", user_game_platform).subscribe()
     }
 
 }
