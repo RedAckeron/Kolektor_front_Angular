@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { FindgameComponent } from './pages/findgame/findgame.component';
 import { FolderComponent } from './pages/folder/folder.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -8,13 +7,20 @@ import { StatsComponent } from './pages/stats/stats.component';
 import { UserComponent } from './pages/user/user.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'/home', pathMatch:'full'},
-  {path:'home',component:HomeComponent},
-  {path:'folder',component:FolderComponent},
-  {path:'findgame',component:FindgameComponent},
-  {path:'stats',component:StatsComponent},
-  {path:'user',component:UserComponent},
-  {path:'**',redirectTo:'/home'}
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  {
+    path: 'folder', component: FolderComponent, children: [
+      {
+        path: ':id_platform', 
+        component: FolderComponent
+      }
+    ]
+  },
+  { path: 'findgame', component: FindgameComponent },
+  { path: 'stats', component: StatsComponent },
+  { path: 'user', component: UserComponent },
+  { path: '**', redirectTo: '/home' }
 ];
 
 @NgModule({

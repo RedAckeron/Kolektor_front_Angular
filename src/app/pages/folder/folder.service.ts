@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { UserEntity } from '../user/models/user.model';
 import { FolderEntity } from './models/FolderEntity.model';
+import { LocalGameEntity } from './models/localGameEntity.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -20,7 +22,7 @@ folder_data:FolderEntity
 
   async service_count_for_user(user_id:number)
     {
-      this._http.get<number>(`http://localhost:3000/user_game_platform/count_all_for_user/${user_id}`).subscribe((data) => {return data})
+      return await this._http.get<number>(`http://localhost:3000/user_game_platform/count_all_for_user/${user_id}`)
     }
     
   async service_get_for_user(user_id:number)
@@ -28,6 +30,10 @@ folder_data:FolderEntity
     return await this._http.get<FolderEntity>(`http://localhost:3000/user_game_platform/show_all_for_user/${user_id}`)
     }
 
+    async findById(id: number) //: Observable<LocalGameEntity>
+    {
+      return await this._http.get<LocalGameEntity>(`http://localhost:3000/game/show_one_by_id/${id}`);
+    }
 
 
 

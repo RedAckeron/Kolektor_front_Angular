@@ -1,14 +1,29 @@
-<div *ngIf="user.id!=0">
-    connecter : {{user.id}}
-    <button (click)="logout()">Logout</button>
-</div>
+    <div *ngIf="user.id!=0">
+        connecter : {{user.id}}
+        <button (click)="logout()">Logout</button>
+    </div>
 
-<div *ngIf="user.id<1">
-    <form >
-        <label for="login">Login : </label>
-        <input type="text" name="login" id="login" [(ngModel)]="user.login">
-        <label for="Password">Password : </label>
-        <input type="text" name="password" id="password" [(ngModel)]="user.password">
-        <button (click)="chk_user()">Login</button>
-    </form>
-</div>
+    <div *ngIf="user.id<1" id="login">
+        <b>Veuillez introduire votre login et votre password pour vous connecter.</b> 
+        <form>
+            <div id="container">
+                <div id="label"><label for="lgn">Login : </label></div>
+                <div id="form"><input type="text" name="login" id="lgn" [(ngModel)]="user.login"></div>
+            </div>
+            <div id="container">
+                <div id="label"><label for="Password">Password : </label></div>
+                <div id="form"><input type="text" name="password" id="password" [(ngModel)]="user.password"></div>
+            </div>
+            <div id="container">
+                <button (click)="chk_user()">Login</button>           
+            </div>
+
+        </form>
+    </div>
+
+
+
+    
+
+   
+        
