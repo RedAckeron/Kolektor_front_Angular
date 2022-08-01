@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { StatsComponent } from './pages/stats/stats.component';
 import { UserComponent } from './pages/user/user.component';
 import { FolderComponent } from './pages/folder/folder.component';
+import { PlatformComponent } from './pages/folder/platform/platform.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FolderComponent } from './pages/folder/folder.component';
     HomeComponent,
     StatsComponent,
     UserComponent,
-    FolderComponent
+    FolderComponent,
+    PlatformComponent
   ],
   imports: [
     FormsModule,

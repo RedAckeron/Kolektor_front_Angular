@@ -10,6 +10,6 @@ export class HomeService {
     constructor(private _http : HttpClient) { }
     countgame() : Observable<any>
     {
-        return this._http.get<any>(`http://85.201.148.106:3000/user_game_platform/count_all`);
+        return this._http.get<any>(`http://localhost:3000/user_game_platform/count_all`);
     }
 }

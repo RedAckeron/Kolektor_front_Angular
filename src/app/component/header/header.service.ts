@@ -1,15 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AppComponent } from 'src/app/app.component';
-import { Result } from '../findgame/findgame.service';
-import { UserEntity } from './models/user.model';
+import { UserEntity } from 'src/app/pages/user/models/user.model';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class UserService {
+export class HeaderService {
+
   constructor(private _http: HttpClient) {  }
-/*
+
   chk_user(user: UserEntity) {
     this._http
       .post<any>('http://localhost:3000/user/login', {
@@ -22,16 +21,11 @@ export class UserService {
         sessionStorage.setItem('login', data[0].login);
       });
   }
-*/
-  add_user(user: UserEntity) {
-    return this._http.post<UserEntity>('http://localhost:3000/user/add_user',user).subscribe();
-  }
-/*
+  
   logout() {
     sessionStorage.setItem('id', '0');
     sessionStorage.setItem('login', '');
     //sessionStorage.removeItem('id');
     //sessionStorage.removeItem('login');
   }
-  */
 }

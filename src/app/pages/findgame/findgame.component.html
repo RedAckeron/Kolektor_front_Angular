@@ -10,7 +10,7 @@
     <div id="return_api">
         <div id="label">Titre : </div>
         <div id="container">
-            <select (change)="selectedGame = $event.target.value;chkgame=false;" [(ngModel)]="focusedgame"> 
+            <select (change)="selectedGame = $event.target.value" [(ngModel)]="focusedgame"> 
                 <option *ngFor="let it of gamesWithPlatform |keyvalue" [value]="[it.key,it.value.id]">{{ it.value.name }}</option>
             </select>
         </div>
@@ -51,5 +51,9 @@
     <div id="button">
         <button [disabled]="chkgame" (click)="handleSendAction()">Ajouter</button>
     </div>
+    
+    <div *ngIf="game_added" (click)="game_added=false" id="game_added">Votre jeux a été ajouter <br><font size="2">Appuyez ici pour fermer</font> 
+    </div>
+    
 </div>
 

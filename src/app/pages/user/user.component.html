@@ -1,31 +1,7 @@
     <div *ngIf="user.id!==0" id="container_connected">
        <h5>Vous etes connecter</h5>
         Login : {{user.login}}
-        <div id="container">
-
-        <button (click)="logout()">Logout</button>
     </div>
-
-    </div>
-
-
-    <div *ngIf="user.id===0" id="login">
-        <b>Veuillez introduire votre login et votre password pour vous connecter.</b> 
-        <form>
-            <div id="container">
-                <div id="label"><label for="lgn">Login : </label></div>
-                <div id="form"><input type="text" name="login" id="lgn" [(ngModel)]="user.login" placeholder="Entrez le login"></div>
-            </div>
-            <div id="container">
-                <div id="label"><label for="Password">Password : </label></div>
-                <div id="form"><input type="text" name="password" id="password" [(ngModel)]="user.password" placeholder="Entrez le password"></div>
-            </div>
-            <div id="container">
-                <button (click)="chk_user()">Login</button>           
-            </div>
-        </form>
-    </div>
-
 
 
     <div *ngIf="user.id<1" id="register">

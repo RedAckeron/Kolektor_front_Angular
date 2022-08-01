@@ -22,11 +22,11 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-
+/*
   chk_user() {
     return this._userService.chk_user(this.user);
   }
-
+*/
   add_user() {
     let usertosend = new UserEntity();
     usertosend.Login = this.user.register_login;
@@ -48,11 +48,12 @@ export class UserComponent implements OnInit {
       this.chkInput = false;
     else this.chkInput = true;
   }
-
+/*
   logout() {
     this._userService.logout();
     this.user.id = 0;
     this.user.login = '';
     this.user.password = '';
   }
+  */
 }

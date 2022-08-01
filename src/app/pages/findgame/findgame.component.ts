@@ -22,11 +22,11 @@ export class FindgameComponent implements OnInit {
   cib_box: boolean
   cib_manual: boolean
   cib_game: boolean
-
   user_id: number
+  game_added:boolean=false
 
   constructor(private _service: FindgameService) {
-    this.user_id = parseInt(sessionStorage.getItem("id"))
+    //this.user_id = parseInt(sessionStorage.getItem("id"))
     //console.table(this.user_id)
   }
   searchgame() {
@@ -39,6 +39,8 @@ export class FindgameComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.user_id = parseInt(sessionStorage.getItem("id"))
+
   }
 
   handleSendAction() {
@@ -64,6 +66,10 @@ export class FindgameComponent implements OnInit {
       ittosend.dt_release = (((Date.parse(it.released)) / 1000) - 3600)
       console.table(ittosend)
       this._service.addGame(ittosend);
+      this.game_added=true;
+      this.chkgame=true;
+      this.namegame="";
+      
     })
 
     //creation de l objet qui vas etre envoyer au postman

@@ -11,10 +11,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   {
     path: 'folder', component: FolderComponent, children: [
-      {
-        path: ':id_platform', 
-        component: FolderComponent
-      }
+      {path: ':id_platform', component: FolderComponent}
     ]
   },
   { path: 'findgame', component: FindgameComponent },
